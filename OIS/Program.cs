@@ -6,7 +6,7 @@ namespace OIS
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("vang een stoeptegel");
         }
     }
 }
