@@ -8,6 +8,8 @@ namespace OIS
     {
         public List<Eend> eendjes = new List<Eend>();
         public List<Kikker> kikkers = new List<Kikker>();
+        Ooievaar ooievaren = new Ooievaar();
+
         public Vijver()
         {
             Eend eendje1 = new Eend("Tygo","man");
@@ -37,6 +39,43 @@ namespace OIS
             kikkers.Add(kikker5);
             kikkers.Add(kikker6);
         }
+
+        public void firstQuestion()
+        {
+            Console.WriteLine("Stel eens een vraag? over welke eendje wil je iets weten? kies uit:");
+            foreach (Eend eend in eendjes)
+            {
+                Console.WriteLine(eend.naam);
+            }
+            string firstQuestionAnswer = Console.ReadLine().ToString();
+            FirstQuestionResult(firstQuestionAnswer);
+        }
+
+
+
+        public void SecondQuestion()
+        {
+            Console.WriteLine("Deze vijver bevat ook Kikkers & Ooievaren. Ooievaren eten ook kikkers. Hier volgt een lijst met kikkers.");
+            foreach (Kikker kikkers in kikkers)
+            {
+                Console.WriteLine(kikkers.naam);
+            }
+            Console.WriteLine("De Ooievaren in de vijver kiezen willekeurig een kikker uit om op te eten.");
+            Console.WriteLine("Druk op enter om verder te gaan.");
+            Console.ReadLine();
+
+            ooievaren.eetKikker(kikkers);
+            Console.WriteLine("de overgebleven kikkers zijn:");
+            foreach (Kikker Kikkers in kikkers)
+            {
+                Console.WriteLine(Kikkers.naam);
+            }
+            Console.Read();
+        }
+
+
+
+
         public void FirstQuestionResult(string input)
         {
             foreach (Eend eend in eendjes)
@@ -47,7 +86,6 @@ namespace OIS
                     return;
                 }
             }
-            Console.WriteLine("Voer Aub een goede naam in.");
         }
     }
 }
