@@ -76,14 +76,14 @@ namespace OIS
 
 
 
-        public void FirstQuestionResult(string input)
+        private void FirstQuestionResult(string input)
         {
             foreach (Eend eend in eendjes)
             {
                 if (input == eend.naam)
                 {
                     Console.WriteLine(eend.naam + " is een " + eend.geslacht);
-                    return;
+                   return; 
                 }
             }
         }

@@ -7,10 +7,13 @@ namespace OIS
     class Main
     {
         public Vijver vijver = new Vijver();
+        public Vijver banaan = new Vijver();
+        public FileReader test = new FileReader();
         public Main()
         {
-            vijver.firstQuestion();
-            vijver.SecondQuestion();
+            test.reader();
+            /*vijver.firstQuestion();
+            vijver.SecondQuestion();*/
         }
 
        
